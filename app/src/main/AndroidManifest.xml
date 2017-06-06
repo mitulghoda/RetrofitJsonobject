@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.thehighlife" >
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission
+        android:name="com.thehighlife.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.thehighlife.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <!--
+ The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but are recommended.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".Activities.application.TheHighLife"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon_final"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Activities.Activities.ActivitySplashScreen"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.Activities.ActivityLoginOrRegister"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityLogin"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityRegister"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".Activities.Activities.ActivityVerifyOtp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityForgotPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityMyAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityPreferredCategories"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityPreferredCity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.CategoryDetailGridviewMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.SubCategoryListviewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityVoucherCode"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityFaq"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityAbout"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityFeedback"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityContact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.HighLifeTrendsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.DetailSubCategoryActivity"
+            android:screenOrientation="portrait" />
+
+
+
+
+        <activity
+            android:name=".Activities.Activities.ActivityVerifyOtpFromLogin"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.Activities.ActivityNotifications"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.HighLifeTrendsHomeDetail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivitySearchResultListview"
+            android:screenOrientation="portrait" />
+
+
+
+        <activity
+            android:name=".Activities.Activities.ActivityTermsAndConditions"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.ActivityForgotEmail"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.Payment.PaymentActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activities.Payment.ActivityCreditCard"
+            android:screenOrientation="portrait" />
+
+
+        <activity
+            android:name=".Activities.Payment.ActivityNetBanking"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Activities.NotificationDetail"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".Activities.VideoService.VideoDownload"
+            android:enabled="true"
+           >
+
+        </service>
+
+        <service
+            android:name=".Activities.GcmNotifications.PushNotificationService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+
+                <category android:name="com.thehighlife" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAsInSCcG6hPQ8ziLrjEhgTo4W3SNio-oE" />
+
+
+
+
+    </application>
+
+</manifest>
